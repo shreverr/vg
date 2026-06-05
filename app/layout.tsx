@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "./components/ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[--bg] text-[--fg] font-sans">
+        <ScrollProgress />
         {children}
       </body>
     </html>

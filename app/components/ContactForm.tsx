@@ -12,11 +12,11 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="card-paper p-10 md:p-14 text-center bg-bg">
-        <div className="display text-4xl md:text-5xl mb-4">
+      <div className="pill-card p-12 md:p-16 text-center">
+        <div className="display text-4xl md:text-5xl mb-4" style={{ color: "var(--ink)" }}>
           Thanks — we&rsquo;ll be in touch.
         </div>
-        <p className="text-fg-muted max-w-md mx-auto">
+        <p className="max-w-md mx-auto" style={{ color: "color-mix(in srgb, var(--ink) 65%, var(--paper))" }}>
           A coach from the admissions team will reach out within two business
           days with next steps and a cohort syllabus.
         </p>
@@ -25,38 +25,26 @@ export default function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="card-paper p-8 md:p-12 bg-bg shadow-[0_1px_0_rgba(0,0,0,0.04)]"
-    >
+    <form onSubmit={onSubmit} className="pill-card p-8 md:p-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
         <div>
-          <label className="eyebrow block">First name</label>
+          <label className="eyebrow on-cream block">First name</label>
           <input className="field" type="text" placeholder="Aanya" required />
         </div>
         <div>
-          <label className="eyebrow block">Last name</label>
+          <label className="eyebrow on-cream block">Last name</label>
           <input className="field" type="text" placeholder="Kapoor" required />
         </div>
         <div className="md:col-span-2">
-          <label className="eyebrow block">Email</label>
-          <input
-            className="field"
-            type="email"
-            placeholder="you@academy.in"
-            required
-          />
+          <label className="eyebrow on-cream block">Email</label>
+          <input className="field" type="email" placeholder="you@academy.in" required />
         </div>
         <div className="md:col-span-2">
-          <label className="eyebrow block">Current role</label>
-          <input
-            className="field"
-            type="text"
-            placeholder="Asst. Strength Coach, ISL academy"
-          />
+          <label className="eyebrow on-cream block">Current role</label>
+          <input className="field" type="text" placeholder="Asst. Strength Coach, ISL academy" />
         </div>
         <div className="md:col-span-2">
-          <label className="eyebrow block">
+          <label className="eyebrow on-cream block">
             What do you want to get out of VG?
           </label>
           <textarea
@@ -68,30 +56,15 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <p className="text-xs text-fg-muted max-w-xs leading-relaxed">
+        <p className="text-xs max-w-xs leading-relaxed" style={{ color: "color-mix(in srgb, var(--ink) 55%, var(--paper))" }}>
           We read every application. Cohort 07 caps at 60 — applications close
           when seats are filled.
         </p>
-        <button type="submit" className="btn-primary">
-          <span className="magnetic inline-flex items-center gap-3">
-            Submit application
-            <svg
-              className="arrow"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              aria-hidden
-            >
-              <path
-                d="M1 7h12M8 2l5 5-5 5"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
+        <button type="submit" className="btn-pill-dark">
+          Submit application
+          <svg className="arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
       </div>
     </form>

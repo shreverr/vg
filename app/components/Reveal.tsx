@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ReactNode, type CSSProperties } from "react";
 
-type Variant = "fade" | "image";
+type Variant = "fade" | "image" | "left" | "right" | "scale";
 
 type Props = {
   children: ReactNode;
@@ -45,7 +45,16 @@ export default function Reveal({
 
   const style = { "--reveal-delay": `${delay}ms` } as CSSProperties;
   const Component = Tag as React.ElementType;
-  const variantClass = variant === "image" ? "img-reveal" : "reveal";
+  const variantClass =
+    variant === "image"
+      ? "img-reveal"
+      : variant === "left"
+      ? "reveal-left"
+      : variant === "right"
+      ? "reveal-right"
+      : variant === "scale"
+      ? "reveal-scale"
+      : "reveal";
 
   return (
     <Component
